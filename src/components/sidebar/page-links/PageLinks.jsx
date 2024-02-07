@@ -11,9 +11,12 @@ function PageLinks() {
     return (
         <div>
             {links.map(link =>
-                <Link className={Styles.link} href={link.path} key={link.title}>
-                    {link.title}
-                </Link>
+                <div className={Styles.linkContainer}>
+
+                    <Link className={Styles.link} href={link.path} key={link.title}>
+                        {link.title}
+                    </Link>
+                </div>
             )}
         </div>
     );
