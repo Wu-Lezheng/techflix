@@ -10,7 +10,8 @@
 }
 
 body {
-    margin-left: 240px;
+    margin-left: 200px;
+    margin-top: 150px;
     background-color: var(--bg);
     color: var(--text);
 }

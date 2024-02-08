@@ -1,7 +1,11 @@
-
+import HomeGallery from "@/components/home-gallery/HomeGallery";
+import RecentlyViewed from "@/components/recently-viewed/RecentlyViewed";
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <>
+      <HomeGallery></HomeGallery>
+      <RecentlyViewed></RecentlyViewed>
+    </>
   );
 }
