@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Styles from "./page-links.module.css"
+import NavLink from "./nav-link/NavLink";
+import Styles from "./PageLinks.module.css"
 
 function PageLinks() {
 
@@ -9,14 +9,9 @@ function PageLinks() {
     ];
 
     return (
-        <div>
+        <div className={Styles.linkContainer}>
             {links.map(link =>
-                <div className={Styles.linkContainer}>
-
-                    <Link className={Styles.link} href={link.path} key={link.title}>
-                        {link.title}
-                    </Link>
-                </div>
+                <NavLink item={link} key={link.title}></NavLink>
             )}
         </div>
     );

@@ -6,7 +6,7 @@
     vertical-align: middle;
     gap: 56px;
 
-    background-color: lightcoral;
+    padding: 0 100px;
 
     position: fixed;
     top: 0;
@@ -14,4 +14,6 @@
     left: 200px;
     height: 100px;
     z-index: 100;
+
+    background-color: var(--bg);
 }
