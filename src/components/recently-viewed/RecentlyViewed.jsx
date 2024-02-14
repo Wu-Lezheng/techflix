@@ -16,7 +16,7 @@ function RecentlyViewed() {
                 {images.map((image, index) => (
                     <div key={index} className={Styles.card}>
                         <img className={Styles.cardImage} src={image.src} width={500} height={300} />
-                        <h3>{image.title}</h3>
+                        <h4>{image.title}</h4>
                     </div>
                 ))}
             </div>

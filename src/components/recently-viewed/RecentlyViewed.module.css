@@ -13,13 +13,19 @@
     border-radius: 10px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
     .grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media (min-width: 1000px) and (max-width: 1400px) {
+@media (min-width: 1001px) and (max-width: 1400px) {
     .grid {
         grid-template-columns: 1fr 1fr 1fr;
     }

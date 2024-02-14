@@ -1,0 +1,36 @@
+.favroutieItemContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0px;
+    padding-left: 30px;
+    width: 60%;
+    min-width: 350px;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.labelInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.metadata {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    text-align: right;
+    font-size: 12px;
+}

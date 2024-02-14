@@ -1,5 +1,5 @@
-.homeContainer {
+.favouriteItem {
     display: flex;
     flex-direction: column;
-    row-gap: 56px;
+    row-gap: 20px;
 }
