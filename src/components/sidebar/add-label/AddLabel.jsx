@@ -1,4 +1,5 @@
 import styles from "./AddLabel.module.css"
+import 'primeicons/primeicons.css';
 
 function AddLabel() {
     return (

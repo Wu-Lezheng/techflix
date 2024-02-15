@@ -10,6 +10,10 @@ function TopSection() {
 
     const [value, setValue] = useState('');
 
+    function handleClick() {
+        console.log("Notification button pressed")
+    }
+
     return (
         <div className={Styles.topBar}>
             <Image src="/techflix.svg" width={200} height={200}></Image>
@@ -17,7 +21,7 @@ function TopSection() {
                 <i className="pi pi-search" />
                 <InputText placeholder="Search" />
             </span>
-            <div><button>Notification</button></div>
+            <div><button onClick={handleClick}>Notification</button></div>
         </div>
     );
 }

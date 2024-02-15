@@ -1,0 +1,28 @@
+.imageContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+
+.thumbnail {
+    object-fit: cover;
+    border: none;
+    border-radius: 12px;
+}
+
+.likeButton {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
+.likeIcon {
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    background-color: hsl(0, 0%, 0%, 0.6);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

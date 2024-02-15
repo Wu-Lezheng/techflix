@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.categorySummary {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.databoxes {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.sortSection {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+}
+
+.productDisplay {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    width: 30%;
+}
+
+@media screen and (max-width: 1000px) {
+    .product {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .product {
+        width: 100%;
+    }
+}
