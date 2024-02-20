@@ -1,0 +1,65 @@
+.loginContainer {
+    width: 45%;
+    max-width: 1000px;
+    min-width: 400px;
+    background-color: var(--bg-t);
+    padding: 50px 50px 60px 50px;
+    border-radius: 20px;
+}
+
+.loginTitle {
+    text-align: center;
+    font-size: 32px;
+}
+
+.loginForm {
+    margin-top: 30px;
+}
+
+.loginLabel {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.loginInput {
+    width: 100%;
+    padding: 8px 50px 8px 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.formGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.rememberLabel {
+    display: flex;
+}
+
+.rememberCheck {
+    margin-right: 4px;
+}
+
+.loginButton {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--accent-color);
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.newAccountLink {
+    margin-top: 20px;
+    font-size: 12px;
+}

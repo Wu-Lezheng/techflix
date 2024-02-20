@@ -27,17 +27,18 @@ function DefaultCategoryPage() {
             <div className={styles.categorySummary}>
                 <div className={styles.categoryDescription}>
                     <h1>Category Title</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis quod, ducimus accusantium temporibus culpa sunt quia vitae deserunt provident blanditiis distinctio omnis eaque aperiam commodi ex! Adipisci esse tenetur quae.</p>
+                    <p className={styles.categoryDetails}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis quod, ducimus accusantium temporibus culpa sunt quia vitae deserunt provident blanditiis distinctio omnis eaque aperiam commodi ex! Adipisci esse tenetur quae.</p>
                 </div>
                 <div className={styles.databoxes}>
                     <div className={styles.databox}>
-                        <h3>13</h3>
-                        <p>Products</p>
+                        <h3 style={{ color: '#E12B29', fontSize: '24px' }}>13</h3>
+                        <p style={{ fontSize: '16px' }}>Products</p>
                     </div>
                     <div className={styles.databox}>
-                        <h3>4000</h3>
-                        <p>Views</p>
+                        <h3 style={{ color: '#E12B29', fontSize: '24px' }}>4000</h3>
+                        <p style={{ fontSize: '16px' }}>Views</p>
                     </div>
+                    <button className={styles.editButton}>Edit</button>
                 </div>
             </div>
 
@@ -45,7 +46,7 @@ function DefaultCategoryPage() {
 
             <div className={styles.sortSection}>
                 <h3>Sort by</h3>
-                <div>
+                <div className={styles.buttonContainer}>
                     {sortButtons.map((sortButton, index) => (
                         <button className={styles.sortButton} key={index} onClick={sortButton.clickFunction}>
                             {sortButton.criterion}

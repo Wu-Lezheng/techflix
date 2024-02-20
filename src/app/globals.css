@@ -1,6 +1,11 @@
 :root {
     --bg: rgb(36, 37, 41);
-    --text: white
+    --bg-t: rgba(87, 90, 98, 0.7);
+    --accent-color: #DB0101;
+    --text: hsl(60, 100%, 97%);
+    --subdued-text: #CDCDC0;
+
+    --button-inactive: hsl(60, 100%, 97%, 0.2);
 }
 
 * {

@@ -7,9 +7,19 @@
 .categorySummary {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 50px;
     align-items: center;
     justify-content: space-between;
+}
+
+.categoryDescription {
+    max-width: 450px;
+}
+
+.categoryDetails {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--subdued-text);
 }
 
 .databoxes {
@@ -18,11 +28,38 @@
     gap: 50px;
 }
 
+.editButton {
+    width: 100px;
+    border: none;
+    border-radius: 6px;
+    margin: 2px 0px;
+    font-size: 16px;
+    background-color: var(--button-inactive);
+    color: var(--text);
+}
+
 .sortSection {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 40px;
     align-items: center;
+    margin-top: 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.sortButton {
+    min-width: 60px;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: var(--button-inactive);
+    color: var(--subdued-text);
 }
 
 .productDisplay {

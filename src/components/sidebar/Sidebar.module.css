@@ -6,6 +6,8 @@
     width: 200px;
     z-index: 100;
 
+    background-color: var(--bg);
+
     display: flex;
     flex-direction: column;
     gap: 100px;
