@@ -25,4 +25,24 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+.productTitle {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.uploadDate {
+    color: var(--subdued-text);
+    font-size: 12px;
+}
+
+.viewNumber {
+    font-size: 10px;
+    background-color: hsl(1, 70%, 49%, 0.8);
+    padding: 2px 6px;
+    border: none;
+    border-radius: 2px;
+    white-space: nowrap;
 }

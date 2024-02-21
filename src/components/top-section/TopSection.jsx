@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import Image from 'next/image';
-import Styles from './TopSection.module.css';
+
+import styles from './TopSection.module.css';
 
 function TopSection() {
 
@@ -15,13 +16,13 @@ function TopSection() {
     }
 
     return (
-        <div className={Styles.topBar}>
+        <div className={styles.topBar}>
             <Image src="/techflix.svg" width={200} height={200}></Image>
             <span className="p-input-icon-left">
                 <i className="pi pi-search" />
                 <InputText placeholder="Search" />
             </span>
-            <div><button onClick={handleClick}>Notification</button></div>
+            <Button icon="pi pi-bell" />
         </div>
     );
 }

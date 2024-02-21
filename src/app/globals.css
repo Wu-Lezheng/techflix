@@ -9,9 +9,24 @@
 }
 
 * {
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+ul,
+ol,
+li,
+div {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
 }
 
 body {
@@ -20,4 +35,10 @@ body {
     margin-top: 100px;
     background-color: var(--bg);
     color: var(--text);
+}
+
+.gradientDivider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, var(--button-inactive), var(--subdued-text), var(--button-inactive));
 }

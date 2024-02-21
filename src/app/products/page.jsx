@@ -1,8 +1,18 @@
+"use client";
+
 import ProductCard from "@/components/product-card/ProductCard";
 
 import styles from "./page.module.css"
+import React, { useState } from "react";
 
 function DefaultCategoryPage() {
+
+    const [products, setProducts] = useState([
+        { src: "/images/software-product-1.png", title: "FlowThru", uploadDate: "November 23, 2023", views: 149 },
+        { src: "/images/software-product-2.jpg", title: "Color Pallete on the Go", uploadDate: "January 08, 2024", views: 3284105 },
+        { src: "/images/software-product-3.jpg", title: "AgileOps", uploadDate: "September 15, 2022", views: 2035 },
+        { src: "/images/software-product-1.png", title: "FlowThru", uploadDate: "November 23, 2023", views: 149 },
+    ]);
 
     const sortButtons = [
         { criterion: "Name", clickFunction: sortByName() },
@@ -42,10 +52,10 @@ function DefaultCategoryPage() {
                 </div>
             </div>
 
-            <hr />
+            <hr className="gradientDivider" />
 
             <div className={styles.sortSection}>
-                <h3>Sort by</h3>
+                <h3 style={{ whiteSpace: "nowrap" }}>Sort by</h3>
                 <div className={styles.buttonContainer}>
                     {sortButtons.map((sortButton, index) => (
                         <button className={styles.sortButton} key={index} onClick={sortButton.clickFunction}>
@@ -56,15 +66,11 @@ function DefaultCategoryPage() {
             </div>
 
             <div className={styles.productDisplay}>
-                <div className={styles.product}>
-                    <ProductCard></ProductCard>
-                </div>
-                <div className={styles.product}>
-                    <ProductCard></ProductCard>
-                </div>
-                <div className={styles.product}>
-                    <ProductCard></ProductCard>
-                </div>
+                {products.map(product => (
+                    <div className={styles.product}>
+                        <ProductCard src={product.src} title={product.title} uploadDate={product.uploadDate} views={product.views}></ProductCard>
+                    </div>
+                ))}
             </div>
         </div>
     );
