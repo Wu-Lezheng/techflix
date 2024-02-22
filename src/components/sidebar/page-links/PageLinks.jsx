@@ -5,7 +5,7 @@ function PageLinks() {
 
     let links = [
         { title: "Home", path: "/" },
-        { title: "Default Category", path: "/products" },
+        { title: "Default Category", path: "/category" },
     ];
 
     return (

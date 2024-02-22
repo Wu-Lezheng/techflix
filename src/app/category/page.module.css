@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+
+    margin-top: var(--mt-topbar);
+    margin-left: var(--ml-sidebar);
 }
 
 .categorySummary {

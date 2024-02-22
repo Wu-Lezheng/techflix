@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { usePathname } from 'next/navigation';
 import Sidebar from '@/components/sidebar/Sidebar';
@@ -8,7 +8,7 @@ import Footer from '@/components/footer/Footer';
 export const LayoutProvider = ({ children }) => {
 
     const pathname = usePathname();
-    const shouldRender = pathname !== "/login"
+    const shouldRender = pathname !== "/login";
 
     return (
         <>

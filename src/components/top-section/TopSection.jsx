@@ -17,7 +17,6 @@ function TopSection() {
 
     return (
         <div className={styles.topBar}>
-            <Image src="/techflix.svg" width={200} height={200}></Image>
             <span className="p-input-icon-left">
                 <i className="pi pi-search" />
                 <InputText placeholder="Search" />

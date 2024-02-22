@@ -1,6 +1,10 @@
 :root {
     --bg: rgb(36, 37, 41);
     --bg-t: rgba(87, 90, 98, 0.7);
+
+    --ml-sidebar: 250px;
+    --mt-topbar: 100px;
+
     --accent-color: #DB0101;
     --text: hsl(60, 100%, 97%);
     --subdued-text: #CDCDC0;
@@ -30,9 +34,7 @@ div {
 }
 
 body {
-    margin-left: 300px;
     margin-right: 100px;
-    margin-top: 100px;
     background-color: var(--bg);
     color: var(--text);
 }
