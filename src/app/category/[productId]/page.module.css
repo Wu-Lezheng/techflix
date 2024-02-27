@@ -1,5 +1,4 @@
 .container {
     margin-top: var(--mt-topbar);
     margin-left: var(--ml-sidebar);
-    background-color: black;
 }
