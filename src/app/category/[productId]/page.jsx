@@ -19,14 +19,17 @@ function ProductPage() {
 
             <ProductGallery></ProductGallery>
 
-            <button onClick={() => handleButtonClick("containerSplit")}>Show Container Split</button>
-            <button onClick={() => handleButtonClick("containerStack")}>Show Container Stack</button>
-            <button onClick={() => handleButtonClick("containerImageSplit", "/products/features/project-management-mockup-phone.png")}>Show Container Image Split</button>
-            <button onClick={() => handleButtonClick("containerImageStack", "/products/features/project-management-mockup-computer.png")}>Show Container Image Stack</button>
+            <div>
+                <button onClick={() => handleButtonClick("containerSplit")}>Show Container Split</button>
+                <button onClick={() => handleButtonClick("containerStack")}>Show Container Stack</button>
+                <button onClick={() => handleButtonClick("containerImageSplit", "/products/features/project-management-mockup-phone.png")}>Show Container Image Split</button>
+                <button onClick={() => handleButtonClick("containerImageStack", "/products/features/project-management-mockup-computer.png")}>Show Container Image Stack</button>
+            </div>
 
             {selectedFeatures.map((feature, index) => (
                 <ProductFeature key={index} styleName={feature.styleName} featureImage={feature.featureImage} />
             ))}
+
         </div>
     );
 }
