@@ -3,19 +3,17 @@
 import { usePathname } from 'next/navigation';
 import Sidebar from '@/components/sidebar/Sidebar';
 import TopSection from '@/components/top-section/TopSection';
-import Footer from '@/components/footer/Footer';
 
 export const LayoutProvider = ({ children }) => {
 
     const pathname = usePathname();
-    const shouldRender = pathname !== "/login";
+    const shouldRender = pathname !== "/login" && pathname !== "/";
 
     return (
         <>
             {shouldRender && <Sidebar />}
             {shouldRender && <TopSection />}
             {children}
-            {shouldRender && <Footer />}
         </>
     )
 };

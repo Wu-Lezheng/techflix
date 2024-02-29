@@ -1,0 +1,8 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 56px;
+
+    margin-left: var(--ml-sidebar);
+    margin-top: var(--mt-topbar);
+}

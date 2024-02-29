@@ -4,6 +4,7 @@
 
     --ml-sidebar: 250px;
     --mt-topbar: 100px;
+    --mr: 100px;
 
     --accent-color: #DB0101;
     --text: hsl(60, 100%, 97%);
@@ -33,8 +34,11 @@ div {
 
 }
 
+button {
+    border: none;
+}
+
 body {
-    margin-right: 100px;
     background-color: var(--bg);
     color: var(--text);
 }
