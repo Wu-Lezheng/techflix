@@ -5,28 +5,28 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 1.5rem;
-    column-gap: 1.2rem;
+    justify-content: space-around;
+    row-gap: 2rem;
+    column-gap: 2rem;
 }
 
 .glowContainer {
     position: relative;
     overflow: hidden;
-    width: 230px;
-    height: 270px;
+    width: 280px;
+    height: 320px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1rem;
-    background-color: rgb(255, 255, 255, 0.06);
+    background-color: rgb(255, 255, 255, 0.1);
 }
 
-.glowContainer:hover::before {
+.glowContainer:hover::before,
+.glowContainer:hover>.containerBorder {
     opacity: 1;
 }
 
-.glowContainer::before {
-    background: radial-gradient(600px circle at var(--light-x) var(--light-y), rgba(255, 255, 255, 0.1), transparent 40%);
+.glowContainer::before,
+.glowContainer>.containerBorder {
     border-radius: inherit;
     content: "";
     position: absolute;
@@ -34,8 +34,27 @@
     left: 0px;
     height: 100%;
     width: 100%;
-    z-index: 2;
 
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 500ms;
+}
+
+.glowContainer::before {
+    background: radial-gradient(800px circle at var(--light-x) var(--light-y), rgba(255, 255, 255, 0.1), transparent 40%);
+    z-index: 3;
+}
+
+.glowContainer>.containerBorder {
+    background: radial-gradient(400px circle at var(--light-x) var(--light-y), rgba(255, 255, 255, 0.4), transparent 40%);
+    z-index: 1;
+}
+
+.glowContainer>.featureContent {
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border-radius: inherit;
+    margin: 1px;
+    background-color: hsl(228, 6%, 18%);
+    position: relative;
+    z-index: 2;
 }
