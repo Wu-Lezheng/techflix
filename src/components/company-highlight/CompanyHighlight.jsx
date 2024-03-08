@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from "./CompanyHighlight.module.css"
 
 function CompanyHighlight() {
@@ -9,35 +9,46 @@ function CompanyHighlight() {
         { x: "0px", y: "0px" }
     ]);
 
-    const handleMouseMove = (index, event) => {
-        const rect = event.target.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
+    // Refs for the glow containers
+    const glowContainerRefs = [useRef(null), useRef(null), useRef(null)];
 
-        setGlowStates(prevStates => {
-            const newStates = [...prevStates];
-            newStates[index] = { x: `${x}px`, y: `${y}px` };
-            return newStates;
+    const handleMouseMove = (event) => {
+        const newStates = glowContainerRefs.map(ref => {
+            const rect = ref.current.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            return { x: `${x}px`, y: `${y}px` };
         });
+
+        setGlowStates(newStates);
     };
 
     return (
-        <div className={styles.featureSection}>
-            {glowStates.map((state, index) => (
-                <div key={index} className={styles.glowContainer}
-                    style={{ '--light-x': state.x, '--light-y': state.y }}
-                    onMouseMove={(event) => handleMouseMove(index, event)}
-                >
-                    <div className={styles.containerBorder}></div>
-                    <div className={styles.featureContent}>
-                        {index === 0 && <p>Innovation</p>}
-                        {index === 1 && <p>Accuracy</p>}
-                        {index === 2 && <p>Responsibility</p>}
-                    </div>
+        <div className={styles.featureSection} onMouseMove={handleMouseMove}>
+            <div ref={glowContainerRefs[0]} className={styles.glowContainer}
+                style={{ '--light-x': glowStates[0].x, '--light-y': glowStates[0].y }}>
+                <div className={styles.containerBorder}></div>
+                <div className={styles.featureContent}>
+                    <p>Innovative</p>
                 </div>
-            ))}
+            </div>
+            <div ref={glowContainerRefs[1]} className={styles.glowContainer}
+                style={{ '--light-x': glowStates[1].x, '--light-y': glowStates[1].y }}>
+                <div className={styles.containerBorder}></div>
+                <div className={styles.featureContent}>
+                    <p>Global</p>
+                </div>
+            </div>
+            <div ref={glowContainerRefs[2]} className={styles.glowContainer}
+                style={{ '--light-x': glowStates[2].x, '--light-y': glowStates[2].y }}>
+                <div className={styles.containerBorder}></div>
+                <div className={styles.featureContent}>
+                    <p>Reliable</p>
+                </div>
+            </div>
         </div>
     );
 }
 
-export default CompanyHighlight
+export default CompanyHighlight;

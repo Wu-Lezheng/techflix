@@ -34,7 +34,7 @@
     font-weight: 900;
 }
 
-.titleDescription {
+.description {
     color: var(--subdued-text);
 }
 
@@ -71,7 +71,7 @@
     height: auto;
     aspect-ratio: 3/2;
     border: none;
-    border-radius: 10rem 5rem 10rem 5rem;
+    border-radius: 50% 25% 50% 25%;
 }
 
 .aboutText {

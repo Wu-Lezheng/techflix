@@ -10,6 +10,10 @@
     column-gap: 2rem;
 }
 
+.featureSection:hover>.glowContainer>.containerBorder {
+    opacity: 1;
+}
+
 .glowContainer {
     position: relative;
     overflow: hidden;
@@ -20,8 +24,7 @@
     background-color: rgb(255, 255, 255, 0.1);
 }
 
-.glowContainer:hover::before,
-.glowContainer:hover>.containerBorder {
+.glowContainer:hover::before {
     opacity: 1;
 }
 
