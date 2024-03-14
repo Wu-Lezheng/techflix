@@ -60,7 +60,7 @@ function LoginPage() {
                 </div>
                 <button className={styles.loginButton} type="submit">Log In</button>
             </form>
-            <p className={styles.newAccountLink}>Don't have an account? Request here </p>
+            <p className={styles.newAccountLink}>Don&apos;t have an account? Request here </p>
         </div>
     );
 }

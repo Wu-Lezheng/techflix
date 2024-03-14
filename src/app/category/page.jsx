@@ -66,8 +66,8 @@ function DefaultCategoryPage() {
             </div>
 
             <div className={styles.productDisplay}>
-                {products.map(product => (
-                    <div className={styles.product}>
+                {products.map((product, index) => (
+                    <div key={index} className={styles.product}>
                         <ProductCard src={product.src} title={product.title} uploadDate={product.uploadDate} views={product.views}></ProductCard>
                     </div>
                 ))}
