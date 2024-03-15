@@ -5,4 +5,5 @@
 
     margin-left: var(--ml-sidebar);
     margin-top: var(--mt-topbar);
+    margin-right: var(--mr-sidebar);
 }
