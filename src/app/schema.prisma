@@ -5,7 +5,130 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+  id       String  @id @default(cuid())
+  username String  @unique
+  password String
+  isAdmin  Boolean @default(false)
+
+  recentlyViewed ProductView[]
+  favourites     UserFavourites[]
+}
+
+model Category {
+  id                  String  @id @default(cuid())
+  categoryName        String  @unique
+  categoryDescription String
+  parentCategoryId    String?
+
+  parentCategory  Category?  @relation("ParentChildren", fields: [parentCategoryId], references: [id])
+  childCategories Category[] @relation("ParentChildren")
+  products        Product[]
+}
+
+model Product {
+  id             String   @id @default(cuid())
+  categoryId     String
+  productName    String
+  productSummary String
+  uploadDate     DateTime @default(now())
+  updateDate     DateTime @default(now())
+  coverImage     String
+
+  category       Category         @relation(fields: [categoryId], references: [id])
+  gallery        MediaFile[]
+  tags           ProductTag[]
+  keywords       Keyword[]
+  specifications Specifications[]
+  features       Feature[]
+  viewedBy       ProductView[]
+  favouritedBy   UserFavourites[]
+}
+
+model ProductView {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  viewedAt  DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id])
+
+  @@unique([userId, productId])
+}
+
+model UserFavourites {
+  userId    String
+  productId String
+  user      User    @relation(fields: [userId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@id([userId, productId])
+}
+
+enum FileType {
+  IMAGE
+  VIDEO
+}
+
+model MediaFile {
+  id        String   @id @default(cuid())
+  fileName  String
+  filePath  String
+  fileType  FileType
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+}
+
+model Tag {
+  id       String       @id @default(cuid())
+  tagName  String       @unique
+  products ProductTag[]
+}
+
+model ProductTag {
+  productId String
+  tagId     String
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  tag     Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([productId, tagId])
+}
+
+model Keyword {
+  value     String
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@id([value, productId])
+}
+
+enum SpecType {
+  OS
+  SUPPORTED_LANGUAGE
+  HARDWARE_REQUIREMENTS
+  SOFTWARE_DEPENDENCIES
+  NETWORK_REQUIREMENTS
+  DEPLOYMENT_ENVIRONMENT
+}
+
+model Specifications {
+  id        String   @id @default(cuid())
+  specType  SpecType
+  value     String
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Feature {
+  id                 String  @id @default(cuid())
+  featureTitle       String
+  featureDescription String
+  productId          String
+  product            Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
