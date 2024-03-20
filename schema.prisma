@@ -130,9 +130,18 @@ model Specifications {
 }
 
 model Feature {
-  id                 String  @id @default(cuid())
+  id                 String        @id @default(cuid())
   featureTitle       String
   featureDescription String
+  featureImage       String?
+  layout             FeatureLayout
   productId          String
-  product            Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  product            Product       @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+enum FeatureLayout {
+  SPLIT
+  STACK
+  IMAGE_SPLIT
+  IMAGE_STACK
 }

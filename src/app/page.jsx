@@ -1,5 +1,6 @@
 import { Button } from "primereact/button";
 import Image from "next/image";
+import Link from "next/link";
 import CompanyHighlight from "@/components/company-highlight/CompanyHighlight";
 
 import 'primeicons/primeicons.css';
@@ -13,7 +14,9 @@ export default function Landing() {
                 <p>Logo</p>
                 <div className={styles.topButtonContainer}>
                     <Button label="Contact Us"></Button>
-                    <Button label="Sign In"></Button>
+                    <Link href="/login">
+                        <Button label="Sign In"></Button>
+                    </Link>
                 </div>
             </div>
 
