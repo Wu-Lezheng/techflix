@@ -6,7 +6,7 @@ import Styles from "./Sidebar.module.css";
 function Sidebar() {
     return (
         <div className={Styles.sideBar}>
-            <UserProfile></UserProfile>
+            <h1>Logo</h1>
             <PageLinks />
             <AddLabel></AddLabel>
         </div>
