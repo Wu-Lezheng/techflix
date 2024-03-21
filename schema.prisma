@@ -27,6 +27,7 @@ model Category {
   id                  String  @id @default(cuid())
   categoryName        String  @unique
   categoryDescription String
+  labelColor          String  @unique
   parentCategoryId    String?
 
   parentCategory  Category?  @relation("ParentChildren", fields: [parentCategoryId], references: [id])

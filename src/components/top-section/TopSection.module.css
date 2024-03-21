@@ -13,7 +13,7 @@
     right: 0;
     left: 200px;
     height: 80px;
-    z-index: 100;
+    z-index: 90;
 
     background-color: var(--bg);
 }

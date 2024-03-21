@@ -1,13 +1,44 @@
 .link {
     display: block;
-    min-width: 100px;
+    width: 100%;
     padding: 10px;
-    border-radius: 10px;
-    font-weight: 500px;
-    color: var(--text);
+    border-radius: 0.4rem;
+    color: var(--subdued-text);
+
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .active {
-    background-color: var(--text);
-    color: var(--bg);
+    background-color: var(--button-inactive);
+    color: var(--text);
+}
+
+.linkContent {
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+    align-items: center;
+
+}
+
+.title {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 1.5rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.title span {
+    position: absolute;
+    white-space: nowrap;
+    transform: translateX(0);
+    transition: 1.5s;
+}
+
+.title:hover span {
+    transform: translateX(calc(130px - 100%));
 }
