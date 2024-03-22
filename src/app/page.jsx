@@ -9,13 +9,16 @@ import styles from "./page.module.css"
 
 export default function Landing() {
     return (
-        <>
+        <div>
             <div className={styles.landingTop}>
-                <p>Logo</p>
+                <div className={styles.logoSection}>
+                    <Image src="/logo.png" alt="Logo" width={48} height={48}></Image>
+                    <h1 style={{ fontWeight: "700" }}>TECHFLIX</h1>
+                </div>
                 <div className={styles.topButtonContainer}>
-                    <Button label="Contact Us"></Button>
+                    <Button label="Contact Us" link style={{ color: "#e64d4d" }}></Button>
                     <Link href="/login">
-                        <Button label="Sign In"></Button>
+                        <Button label="Sign In" style={{ backgroundColor: "var(--accent-color)", width: "110px" }}></Button>
                     </Link>
                 </div>
             </div>
@@ -58,6 +61,6 @@ export default function Landing() {
 
                 <CompanyHighlight></CompanyHighlight>
             </div>
-        </>
+        </div>
     );
 }

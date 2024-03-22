@@ -2,8 +2,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem 3rem;
-    margin: 0 2rem;
+    padding: 1.8rem 5rem;
+    margin: 0;
+    align-items: center;
+}
+
+.logoSection {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
     align-items: center;
 }
 
