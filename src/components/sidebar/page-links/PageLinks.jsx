@@ -18,10 +18,10 @@ async function getRootCategories() {
     }
 }
 
-export default function PageLinks() {
+export default async function PageLinks() {
 
-    // const rootCategories = await getRootCategories();
-    // console.log(rootCategories);
+    const rootCategories = await getRootCategories();
+    console.log(rootCategories);
 
     let links = [
         { title: "Home", path: "/home" },
