@@ -8,6 +8,7 @@ import stBuilding from '../../public/st-building.jpg';
 import styles from "./page.module.css"
 
 export default function Landing() {
+
     return (
         <div>
             <div className={styles.landingTop}>

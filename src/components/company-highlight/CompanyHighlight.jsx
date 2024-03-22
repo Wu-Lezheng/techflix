@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef } from 'react';
+import Image from 'next/image';
 import styles from "./CompanyHighlight.module.css"
 
 function CompanyHighlight() {
@@ -30,7 +31,9 @@ function CompanyHighlight() {
                 style={{ '--light-x': glowStates[0].x, '--light-y': glowStates[0].y }}>
                 <div className={styles.containerBorder}></div>
                 <div className={styles.featureContent}>
-                    <p>Innovative</p>
+                    <Image src="/innovative.png" alt='Innovative' width={140} height={140}></Image>
+                    <h3>Innovative</h3>
+                    <p>ST Engineering is innovative in nature</p>
                 </div>
             </div>
             <div ref={glowContainerRefs[1]} className={styles.glowContainer}
