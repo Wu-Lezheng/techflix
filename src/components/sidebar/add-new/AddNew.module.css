@@ -1,6 +1,6 @@
 .container {
     background-color: rgba(69, 69, 69, 0.4);
-    width: 80%;
+    width: 60%;
     border: none;
     border-radius: 20px;
     text-align: center;
@@ -13,23 +13,30 @@
     padding: 8px;
     border-radius: 50%;
     margin-bottom: 10px;
-    background-color: #547fd7;
+    background-color: var(--accent-color);
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .addButton:hover {
-    background-color: lightgray;
+    background-color: #b20101;
 }
 
 .addButton:active {
-    background-color: gray;
+    background-color: #b20101;
 }
 
 .addIcon {
     width: 28px;
     height: 28px;
     margin: 0;
+}
+
+.overlay {
+    background-color: var(--bg);
+    border-radius: 1rem;
+    padding: 2rem 2rem;
 }

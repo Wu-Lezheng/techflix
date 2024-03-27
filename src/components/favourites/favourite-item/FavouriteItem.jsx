@@ -7,7 +7,7 @@ function FavouriteItem(props) {
 
     return (
         <div className={styles.favroutieItemContainer}>
-            <Image src={props.src} height={120} width={200}></Image>
+            <Image src={props.src} alt="" height={120} width={200}></Image>
             <div className={styles.textContainer}>
                 <h3>{props.title}</h3>
                 <div className={styles.productInfo}>

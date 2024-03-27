@@ -21,23 +21,20 @@ async function getRootCategories() {
 export default async function PageLinks() {
 
     const rootCategories = await getRootCategories();
-    console.log(rootCategories);
-
-    let links = [
-        { title: "Home", path: "/home" },
-        { title: "Default Category", path: "/category" },
-    ];
 
     return (
-        <div className={styles.linkContainer}>
-            <NavLink item={{ title: "Home", path: "/home", icon: <AiFillHome size={20} /> }}></NavLink>
-            <NavLink item={{ title: "Default Category Long Name", path: "/category", icon: <AiFillFolder size={20} /> }}></NavLink>
-            <NavLink item={{ title: "Settings", path: "/account", icon: <AiFillSetting size={20} /> }}></NavLink>
-        </div>
-        // <div className={styles.linkContainer}>
-        //     {links.map(link =>
-        //         <NavLink item={link} key={link.title}></NavLink>
-        //     )}
-        // </div>
+        <>
+            <div className={styles.linkContainer}>
+                <NavLink item={{ title: "Home", path: "/home", icon: <AiFillHome size={20} /> }}></NavLink>
+                <NavLink item={{ title: "Default Category Long Name", path: "/category", icon: <AiFillFolder size={20} /> }}></NavLink>
+                <NavLink item={{ title: "Settings", path: "/account", icon: <AiFillSetting size={20} /> }}></NavLink>
+            </div>
+            {rootCategories.map((category) => {
+                return (
+                    <h3>{category.categoryName}</h3>
+                );
+            })}
+        </>
+
     );
 }
