@@ -18,9 +18,9 @@ async function getRootCategories() {
     }
 }
 
-export default async function PageLinks() {
+export default function PageLinks() {
 
-    const rootCategories = await getRootCategories();
+    // const rootCategories = await getRootCategories();
 
     return (
         <>
@@ -29,11 +29,6 @@ export default async function PageLinks() {
                 <NavLink item={{ title: "Default Category Long Name", path: "/category", icon: <AiFillFolder size={20} /> }}></NavLink>
                 <NavLink item={{ title: "Settings", path: "/account", icon: <AiFillSetting size={20} /> }}></NavLink>
             </div>
-            {rootCategories.map((category) => {
-                return (
-                    <h3>{category.categoryName}</h3>
-                );
-            })}
         </>
 
     );
