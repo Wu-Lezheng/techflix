@@ -1,66 +1,41 @@
-"use client";
-
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+// NewCategory component
+import React from "react";
 import { Button } from "primereact/button";
 import { ColorPicker } from 'primereact/colorpicker';
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 
-function NewCategory({ visible, setVisible }) {
+function NewCategory({ formState, handleInputChange, handleSubmit, setVisible }) {
+    const { categoryName, categoryDescription, labelColor } = formState;
 
-    const [categoryName, setCategoryName] = useState('');
-    const [categoryDescription, setCategoryDescription] = useState('');
-    const [labelColor, setLabelColor] = useState('');
-    const [parentCategoryId, setParentCategoryId] = useState(null);
-    const router = useRouter()
-
-    const handleSubmit = async (event) => {
+    const onSubmit = (event) => {
         event.preventDefault();
-
-        try {
-            await fetch("/api/add-category", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ categoryName, categoryDescription, labelColor, parentCategoryId })
-            })
-
-            router.refresh();
-        } catch (error) {
-            console.error(error)
-        }
-
-        setCategoryName('');
-        setCategoryDescription('');
-        setLabelColor('');
-        setParentCategoryId('');
-        setVisible(false);
+        handleSubmit();
     };
 
     return (
         <div>
-            <form id="categoryForm" onSubmit={handleSubmit}>
+            <form id="categoryForm" onSubmit={onSubmit}>
                 <label>
                     <p>Category Name</p>
-                    <InputText id="categoryName" value={categoryName} onChange={(e) => setCategoryName(e.target.value)} />
+                    <InputText id="categoryName" value={categoryName} onChange={(e) => handleInputChange('categoryName', e.target.value)} />
                 </label>
                 <label>
                     <p>Category Description</p>
-                    <InputTextarea autoResize rows={6} cols={40} id="categoryDescription" value={categoryDescription} onChange={(e) => setCategoryDescription(e.target.value)} />
+                    <InputTextarea autoResize rows={6} cols={40} id="categoryDescription" value={categoryDescription} onChange={(e) => handleInputChange('categoryDescription', e.target.value)} />
                 </label>
                 <label>
                     <p>Label Color</p>
-                    <ColorPicker id="labelColor" name="labelColor" value={labelColor} onChange={(e) => setLabelColor(e.target.value)} />
+                    <ColorPicker id="labelColor" name="labelColor" value={labelColor} onChange={(e) => handleInputChange('labelColor', e.target.value)} />
                 </label>
+                {/* Add more form fields as needed */}
                 <div>
                     <Button label="Submit" type="submit"></Button>
-                    <Button label="Cancel" type="reset" onClick={e => setVisible(false)}></Button>
+                    <Button label="Cancel" type="button" onClick={() => setVisible(false)}></Button>
                 </div>
             </form>
         </div>
     );
 }
 
-export default NewCategory
+export default NewCategory;

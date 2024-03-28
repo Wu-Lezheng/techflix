@@ -5,7 +5,7 @@ export async function POST(request) {
     const res = await request.json();
     const { categoryName, categoryDescription, labelColor, parentCategoryId } = res;
     console.log(res)
-    const newCategory = await prisma.post.create({
+    const newCategory = await prisma.category.create({
         data: {
             categoryName,
             categoryDescription,
