@@ -2,11 +2,11 @@ import { NextResponse } from "next/server";
 import busboy from "busboy";
 import fs from "fs";
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-};
+// export const config = {
+//     api: {
+//         bodyParser: false,
+//     },
+// };
 
 export async function POST(req, res) {
     const bb = busboy({ headers: req.headers })
