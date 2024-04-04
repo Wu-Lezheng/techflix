@@ -5,6 +5,8 @@ import { ColorPicker } from 'primereact/colorpicker';
 import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 
+import styles from "./NewCategory.module.css"
+
 function NewCategory({ formState, handleInputChange, handleSubmit, setVisible }) {
     const { categoryName, categoryDescription, labelColor } = formState;
 
@@ -14,7 +16,7 @@ function NewCategory({ formState, handleInputChange, handleSubmit, setVisible })
     };
 
     return (
-        <div>
+        <div className={styles.formContainer}>
             <form id="categoryForm" onSubmit={onSubmit}>
                 <label>
                     <p>Category Name</p>
@@ -31,7 +33,7 @@ function NewCategory({ formState, handleInputChange, handleSubmit, setVisible })
                 {/* Add more form fields as needed */}
                 <div>
                     <Button label="Submit" type="submit"></Button>
-                    <Button label="Cancel" type="button" onClick={() => setVisible(false)}></Button>
+                    <Button label="Cancel" type="reset" onClick={() => setVisible(false)}></Button>
                 </div>
             </form>
         </div>

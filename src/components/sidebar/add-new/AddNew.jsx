@@ -6,20 +6,21 @@ import { Dialog } from 'primereact/dialog';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { TabSelect, Tab } from './tab-select/TabSelect';
 import NewCategory from './new-category/NewCategory';
+import NewProduct from './new-product/NewProduct';
 import styles from './AddNew.module.css';
 
 function AddNew() {
     const [visible, setVisible] = useState(false);
 
-    const [formState, setFormState] = useState({
+    const [categoryFormState, setCategoryFormState] = useState({
         categoryName: '',
         categoryDescription: '',
         labelColor: '',
         parentCategoryId: null
     });
 
-    const handleInputChange = (fieldName, value) => {
-        setFormState(prevState => ({
+    const handleCategoryInputChange = (fieldName, value) => {
+        setCategoryFormState(prevState => ({
             ...prevState,
             [fieldName]: value
         }));
@@ -32,11 +33,11 @@ function AddNew() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formState)
+                body: JSON.stringify(categoryFormState)
             });
 
             // Reset form values and close dialog
-            setFormState({
+            setCategoryFormState({
                 categoryName: '',
                 categoryDescription: '',
                 labelColor: '',
@@ -49,6 +50,28 @@ function AddNew() {
             console.error(error);
         }
     };
+
+    const [productFormStates, setProductFormStates] = useState({
+        productName: '',
+        productSummary: '',
+        coverImage: '',
+        categoryId: '',
+        gallery: [],
+        tags: [],
+        keywords: [],
+        specifications: []
+    });
+
+    const handleProductInputChange = (fieldName, value) => {
+        setProductFormStates(prevState => ({
+            ...prevState,
+            [fieldName]: value
+        }));
+    };
+
+    const handleSubmitNewProduct = async () => {
+
+    }
 
     return (
         <div className={styles.container}>
@@ -66,14 +89,18 @@ function AddNew() {
                         <TabSelect>
                             <Tab header="New Category">
                                 <NewCategory
-                                    formState={formState}
-                                    handleInputChange={handleInputChange}
+                                    formState={categoryFormState}
+                                    handleInputChange={handleCategoryInputChange}
                                     handleSubmit={handleSubmitNewCategory}
                                     setVisible={setVisible}
                                 />
                             </Tab>
-                            <Tab header="Tab 2">
-                                <h1>Hello</h1>
+                            <Tab header="New Product">
+                                <NewProduct
+                                    formState={productFormStates}
+                                    handleInputChange={handleProductInputChange}
+                                    handleSubmit={handleSubmitNewProduct}
+                                />
                             </Tab>
                             {/* Add more tabs if needed */}
                         </TabSelect>

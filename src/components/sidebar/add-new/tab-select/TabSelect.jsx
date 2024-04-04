@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import styles from "./TabSelect.module.css"
 
 function TabSelect({ children }) {
     const [activeTab, setActiveTab] = useState(0);
@@ -25,14 +26,12 @@ function TabSelect({ children }) {
     const tabContent = Array.isArray(children) ? children[activeTab] : [children];
 
     return (
-        <div className="tab-container">
-            <div className="tabs">
+        <div className={styles.tabContainer}>
+            <div className={styles.tabs}>
                 {tabButtons}
             </div>
 
-            <div className="tab-content">
-                {tabContent}
-            </div>
+            {tabContent}
         </div>
     );
 }

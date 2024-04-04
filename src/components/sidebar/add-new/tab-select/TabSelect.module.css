@@ -1,0 +1,13 @@
+.tabContainer {
+    overflow: auto;
+    height: 100%;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4rem;
+    justify-content: center;
+}
+
+.tabContent {}
