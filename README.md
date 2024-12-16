@@ -2,4 +2,5 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Techflix
 
-Techflix a website for ST Engineering's customer outreach by showcasing the various products and demos of the company. The website will allow user operations such as uploading, editing and deletion, as well as user customisation. It will also feature next-generation design and dynamic layout, with the potential use of AI/ML.
+Techflix is a website using Next.js for the company’s customer outreach by showcasing the company’s products and demos. It featured responsive web design, interactive elements and customisable layout.
+
